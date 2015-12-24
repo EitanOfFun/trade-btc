@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>BTC to IDR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <input id="idr" type="text">
+  <span>IDR</span>
+
+  <input id="btc" type="text">
+  <span>BTC</span>
+  <div >
+    <button type="button" onclick="refreshLastPrice()">
+      Refresh Last Price
+    </button>
+    <span id="lastPrice"></span>
+  </div>
+  <div >
+
+    <span>Exchange rate calculated using </span>
+    <a href="https://vip.bitcoin.co.id/">
+      https://vip.bitcoin.co.id/
+    </a>
+    <span>Last Price - 100,000</span>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
