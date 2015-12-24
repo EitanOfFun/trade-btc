@@ -30,8 +30,14 @@
 
   </div>
 
+  <div id="elm-app"></div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="exchange.js"></script>
+  <script type="text/javascript">
+  var app = Elm.embed(Elm.Exchange, document.getElementById('elm-app'));
+  </script>
 </body>
 
 </html>
