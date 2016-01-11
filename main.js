@@ -25,14 +25,18 @@ function refreshIDR() {
 }
 
 function refreshILS() {
-  $.get("https://www.bitsofgold.co.il/api/btc")
-    .then(function (data) {
-        ilsPrice = JSON.parse(data);
-    });
-  // ilsPrice = {"buy": 1833.7596014713597, "sell": 1664.5540186445937 }
+  $.get("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D'https%3A%2F%2Fwww.bitsofgold.co.il%2Fapi%2Fbtc'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys")
+  .then(function (data) {
+    ilsPrice = JSON.parse(data.query.results.body);
+  });
 }
-
+function callb(json) {
+  console.log(json);
+}
 function refreshRates() {
+  $("#btc").val("");
+  $("#ils").val("");
+  $("#idr").val("");
   refreshIDR();
   refreshILS();
 }
@@ -80,7 +84,7 @@ function fromILS() {
 }
 
 refreshRates();
-setInterval(refreshRates, 60 * 1000);
+// setInterval(refreshRates, 60 * 1000);
 
 
 $('#btc').keyup(fromBTC);
